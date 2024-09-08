@@ -1,33 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
+    <title>Animated Login Page</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="login-form">
-        <h2>Login</h2>
+    <div class="login-container">
+        <h1>Login</h1>
         <form>
             <div class="input-group">
+                <input type="text" id="username" placeholder="Username" required>
                 <label for="username">Username</label>
-                <input type="text" id="username" oninput="moveMan()">
-                <div class="man">
-                    <img src="man-with-glasses.png" alt="Man with glasses">
+                <div class="eye-container">
+                    <div class="eye left-eye"></div>
+                    <div class="eye right-eye"></div>
                 </div>
             </div>
             <div class="input-group">
+                <input type="password" id="password" placeholder="Password" required>
                 <label for="password">Password</label>
-                <input type="password" id="password" oninput="moveMan()">
-                <div class="man">
-                    <img src="man-with-glasses.png" alt="Man with glasses">
+                <div class="eye-container">
+                    <div class="eye left-eye"></div>
+                    <div class="eye right-eye"></div>
                 </div>
             </div>
             <button type="submit">Login</button>
         </form>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
