@@ -1,15 +1,19 @@
-function moveMan() {
-    const usernameInput = document.getElementById('username');
-    const passwordInput = document.getElementById('password');
-    const manElements = document.querySelectorAll('.man');
+const usernameInput = document.getElementById("username");
+const passwordInput = document.getElementById("password");
+const eyeContainers = document.querySelectorAll(".eye-container");
 
-    manElements.forEach((man) => {
-        const input = man.parentNode.querySelector('input');
-        const inputWidth = input.offsetWidth;
-        const inputValue = input.value;
-        const manWidth = man.offsetWidth;
-        const movePercentage = (inputValue.length / inputWidth) * 100;
+usernameInput.addEventListener("input", handleInput);
+passwordInput.addEventListener("input", handleInput);
 
-        man.style.transform = `translateX(${movePercentage}%)`;
+function handleInput(event) {
+    const input = event.target;
+    const eyeContainer = input.parentElement.querySelector(".eye-container");
+    const eyes = eyeContainer.querySelectorAll(".eye");
+
+    const eyeX = (input.value.length * 2) % 30;
+    const eyeY = (input.value.length * 2) % 20;
+
+    eyes.forEach(eye => {
+        eye.style.transform = `translate(${eyeX}px, ${eyeY}px)`;
     });
 }
